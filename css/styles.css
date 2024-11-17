@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --color-primary: #496331;
+  --color-secondary: #BDD1A9;
+  --color-secondary-hard: #b1c49e;
+  --color-tertiary: #C5412D;
+  --color-background: #F4F5F8;
+  --color-white: white;
+  --color-black: black;
+  --color-button-tag-primary: #e4e1e1;
+  --color-button-tag-secondary: #d1d1d1;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
   
   aside {
@@ -19,8 +33,11 @@
     padding: 50px 30px;
   }
   
-  button,
-  a {
+  body{
+    background-color: var(--color-background);
+  }
+
+  button,a {
     all: unset;
   }
   
@@ -31,7 +48,7 @@
   /* Header */
   header {
     padding: 1rem 2rem;
-    background-color: #41a453;
+    background-color: var(--color-primary);
     border-radius: 0 0 30px 30px;
   }
   
@@ -39,7 +56,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: #fff;
+    color: var(--color-white);
     gap: 1rem;
   }
   
@@ -55,8 +72,17 @@
   .search {
     width: 100%;
     max-width: 1024px;
+    position: relative;
   }
   
+  .search span {
+    position: absolute;
+    color: var(--color-primary);
+    right: 15px;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
   .search input {
     width: 100%;
     height: 42px;
@@ -69,7 +95,7 @@
     display: inline-flex;
     gap: 3rem;
     align-items: center;
-    color: black;
+    color: white;
   }
   
   .menu-btn {
@@ -77,9 +103,10 @@
   }
   
   .login-btn {
-    border: 3px solid black;
+    border: 2px solid var(--color-white);
+    height: 42px;
     border-radius: 46px;
-    padding: 10px 20px;
+    padding: 0px 20px;
     text-wrap: nowrap;
   }
   
@@ -95,7 +122,7 @@
   .cart {
     position: relative;
     cursor: pointer;
-    background-color: white;
+    background-color: var(--color-white);
     border-radius: 50%;
     padding: 9px;
     display: flex;
@@ -107,8 +134,8 @@
     position: absolute;
     top: -8px;
     right: -10px;
-    background-color: red;
-    color: white;
+    background-color: var(--color-tertiary);
+    color: var(--color-white);
     border-radius: 50%;
     padding: 0.2rem 0.5rem;
     font-size: 0.8rem;
@@ -123,7 +150,7 @@
     display: block;
     width: -webkit-fill-available;
     border-radius: 56px;
-    border: 3px solid black;
+    border: 2px solid var(--color-black);
     text-align: center;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -131,7 +158,7 @@
   }
   
   .category-btn button:hover {
-    background-color: #f5f5f5;
+    background-color: var(--color-white);
   }
   
   .category-text-wrapper h2 {
@@ -157,16 +184,16 @@
   }
   
   .categories ul li button {
-    border: 1px solid black;
-    padding: 10px 20px;
+    border: 1px solid var(--color-black);
+    padding: 5px 10px;
     border-radius: 16px;
-    background-color: #e4e1e1;
+    background-color: var(--color-button-tag-primary);
     text-align: center;
     cursor: pointer;
   }
   
   .categories ul li button:hover {
-    background-color: #d1d1d1;
+    background-color: var(--color-button-tag-secondary);
   }
   
   .brands > label {
@@ -194,14 +221,14 @@
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: #f5f5f5;
+    background-color: var(--color-button-tag-primary);
   }
   
   .search-filter input,
   .search-filter select {
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid --color-button-tag-primary;
     border-radius: 5px;
     width: 200px;
   }
@@ -215,20 +242,15 @@
   }
   
   /* Product List & Breadcrumb */
-  .breadcrumb {
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-  }
   .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .product-card {
+    background-color: var(--color-white);
     border-radius: 27px;
-    box-shadow: 0px 4px 4px 0px #00000040;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -243,7 +265,7 @@
     font-size: 0.938rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #4f4d4d;
+    color: var(--color-button-tag-secondary);
   }
   
   .product-card > p:not(.price) {
@@ -258,29 +280,32 @@
   
   .product-card button {
     margin-top: 1rem;
-    color: white;
+    color: black;
     border-radius: 19px;
-    background-color: #41a453;
-    padding: 15px 20px;
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    padding: 8px 20px;
     text-align: center;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 500;
   }
   
   .product-card button:hover {
-    background-color: #3a8b4f;
+    background-color: var(--color-secondary-hard);
+    color: black;
+    border-radius: 19px;
+    border: 2px solid var(--color-secondary-hard);
   }
   
   /* Footer */
   .footer {
-    background-color: #d9d9d9;
-    color: black;
+    background-color: var(--color-button-tag-secondary);
+    color: var(--color-black);
     /* text-align: center; */
-    padding: 1rem;
-    margin-top: 2rem;
+    padding: 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 1rem;
   }
   
@@ -297,20 +322,21 @@
   }
   
   .footer .social-icons a img {
-    width: 30px;
+    width: 20px;
     margin: 0 0.5rem;
     vertical-align: middle;
   }
   
   .footer p a {
-    color: #bbb;
+    color: var(--color-button-tag-primary);
     text-decoration: none;
+    
     margin: 0 0.5rem;
     transition: color 0.3s;
   }
   
   .footer p a:hover {
-    color: #fff;
+    color: var(--color-white)
   }
   
   .footer .rights {
