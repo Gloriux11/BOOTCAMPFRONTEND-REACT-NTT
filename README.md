@@ -2,64 +2,131 @@
 
 ## Descripción del Proyecto
 
-Este proyecto es una aplicación de Mini Marketplace del emprendimiento llamado "Chacra a la olla" desarrollada como parte del Bootcamp de NTT. En esta primera entrega, se ha implementado el diseño básico de la interfaz usando HTML5 y CSS3. La aplicación permite a los usuarios visualizar productos en una página web responsiva que simula un mercado en línea.
+Este proyecto es una aplicación de Mini Marketplace del emprendimiento llamado "Chacra a la olla" desarrollada como parte del Bootcamp de NTT. En esta segunda entrega, permite a los usuarios buscar productos, agregarlos al carrito y gestionar sus compras. A continuación, se detalla la estructura del proyecto y la funcionalidad de cada componente y servicio.
 
 ### Logo de "Chacra a la olla": 
 <p align="center">
-    <img src=".\assets\images\logo_oficial.png" alt="Logotipo" width="300" />
+    <img src=".\src\assets\images\logo_oficial.png" alt="Logotipo" width="300" />
 </p>
-
-## Tabla de Contenidos
-
-- [Descripción del Proyecto](#descripción-del-proyecto)
-- [Instalación](#instalación)
-- [Estructura de Carpetas](#estructura-de-carpetas)
-- [Características Implementadas](#características-implementadas)
-- [Uso](#uso)
 
 ## Instalación
 
-1. **Clonar el Repositorio**  
-   Clona el repositorio del proyecto desde GitHub:
-   ```bash
-   git clone https://github.com/TU_USUARIO/BOOTCAMP-FRONTEND-REACT-NTT.git
-
-2. **Abrir el Proyecto**  
-   Navega a la carpeta del proyecto y abre el archivo index.html en tu navegador para ver la aplicación.
+1. Clona el repositorio.
+2. Instala las dependencias con `npm install`.
+3. Ejecuta el proyecto en modo desarrollo con `npm run dev`.
+4. Abre el navegador y navega a `http://localhost:5173/`.
 
 ## Estructura de Carpetas
 
 La estructura de carpetas para esta entrega inicial es la siguiente:
 
 
-BOOTCAMP-FRONTEND-REACT-NTT/ 
+BOOTCAMP-FRONTEND-REACT-NTT/
 
-├── assets/         # Imágenes y otros archivos estáticos 
+├── src/                         # Código fuente principal del proyecto
 
-├── css/            # Archivos de estilos CSS 
+│   ├── assets/                  # Recursos estáticos del proyecto
 
-│ └── styles.css    # Estilos principales del proyecto 
+│   │   ├── images/              # Imágenes utilizadas en la aplicación
 
-├── html/           # Archivos HTML 
+│   │   │   ├── cart-icon.png
 
-│ └── index.html    # Página principal del proyecto 
+│   │   │   ├── facebook-icon.png
 
-└── README.md       # Documentación del proyecto
+│   │   │   ├── filter-icon.png
 
+│   │   │   ├── heart-icon.png
 
-## Características Implementadas
+│   │   │   ├── instagram-icon.png
 
-- **HTML5 y CSS3**: Estructura y estilos base de la aplicación.
-- **Diseño Responsivo**: Adaptación a diferentes tamaños de pantalla usando Flexbox y media queries.
-- **Interfaz Básica de Productos**: Presentación visual de productos en tarjetas con sus nombres, precios y botón de "Agregar al Carro". Si desea ver el prototipo de alta fidelidad. Por favor, ingrese al siguiente [link](https://www.figma.com/proto/vdJ9TJbsHvfl3lhL7ffB3v/Bootcamp-React-NTTDATA?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=40%2C-21%2C0.57&t=RArnWemxhf0HsBoC-1&scaling=min-zoom&content-scaling=fixed)
+│   │   │   ├── javascript.svg
+
+│   │   │   ├── logo_oficial.png
+
+│   │   │   ├── logo.png
+
+│   │   │   ├── menu-icon.webp
+
+│   │   │   ├── prototipo.png
+
+│   │   │   └── x-icon.png
+
+│   │   └── vite.svg             # Logo de Vite
+
+│   ├── components/              # Componentes de React utilizados en la aplicación
+
+│   │   ├── cart.js              # Componente para la funcionalidad del carrito de compras
+
+│   │   ├── displayCategories.js # Componente para mostrar categorías de productos
+
+│   │   └── displayProducts.js   # Componente para mostrar los productos
+
+│   ├── public/                  # Archivos estáticos accesibles públicamente
+
+│   ├── services/                # Servicios de la aplicación
+
+│   │   └── product.service.js   # Clase para interactuar con la API de productos
+
+│   ├── utils/                   # Utilidades generales del proyecto
+
+│   │   ├── debounce.js          # Función de debounce para optimización de eventos
+
+│   │   └── counter.js           # Archivo auxiliar para funcionalidades contables
+
+│   ├── main.js                  # Archivo principal que inicializa la aplicación
+
+│   └── style.css                # Archivo de estilos principal
+
+├── public/                      # Recursos accesibles públicamente
+
+├── .gitignore                   # Archivos y directorios ignorados por Git
+
+├── package.json                 # Configuración del proyecto y dependencias
+
+├── package-lock.json            # Registro de dependencias del proyecto
+
+├── README.md                    # Documentación del proyecto
+
+└── vite.config.js               # Configuración del entorno de Vite
+
 
 ### Prototipo: 
 <p align="center">
-    <img src=".\assets\images\prototipo.png" alt="Diseño de Figma" />
+    <img src=".\src\assets\images\prototipo.png" alt="Diseño de Figma" />
 </p>
 
-## Uso
+## Funcionalidad Detallada
 
-1. **Visualización de Productos**: La página principal muestra una lista de productos con sus detalles básicos por el momento limitados.
-2. **Diseño Responsivo**: El diseño se adapta a dispositivos móviles, tablets y pantallas de escritorio.
+#### `ProductService`
 
+- **fetchProducts**: Obtiene productos con los parámetros `limit` y `skip` desde la API.
+- **searchProducts**: Busca productos utilizando un query de búsqueda.
+- **fetchCategories**: Obtiene todas las categorías desde la API.
+- **fetchProductsByCategory**: Obtiene productos por categoría.
+- **fetchCategoryNameBySlug**: Obtiene el nombre de una categoría por su slug.
+
+### Componentes
+
+#### `cart.js`
+
+- **addToCartButton**: Añade productos al carrito y muestra controles de cantidad.
+- **addToCart**: Añade productos al carrito y los guarda en `localStorage`.
+- **removeFromCart**: Elimina productos del carrito y actualiza `localStorage`.
+- **updateCartQuantity**: Actualiza la cantidad de productos en el carrito.
+- **updateCartCount**: Actualiza el contador de productos en el carrito.
+
+#### `displayCategories.js`
+
+- **displayCategories**: Muestra las categorías de productos y permite seleccionar una categoría para filtrar los productos.
+- **setActiveCategory**: Establece la categoría activa y actualiza la interfaz de usuario.
+
+#### `displayProducts.js`
+
+- **displayProducts**: Muestra los productos en el DOM con sus respectivos controles de cantidad.
+- **clearSearchInput**: Limpia el campo de búsqueda.
+
+### Utilidades
+
+#### `debounce.js`
+
+- **debounce**: Evita que una función se ejecute más de una vez en un cierto período de tiempo.

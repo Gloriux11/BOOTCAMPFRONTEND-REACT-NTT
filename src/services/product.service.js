@@ -51,7 +51,7 @@ export class ProductService {
    * @param {number} skip El número de productos a saltar
    * @returns  {Promise<Array>} Una promesa que resuelve a un array de productos
    */
-  async fetchProductsByCategory(category, limit = 10, skip = 0) {
+  async fetchProductsByCategory(category, limit = 12, skip = 0) {
     return await fetch(
       `${this.baseUrl}/category/${category}?limit=${limit}&skip=${skip}`
     )

@@ -9,7 +9,7 @@
   --color-white: white;
   --color-black: black;
   --color-button-tag-primary: #e4e1e1;
-  --color-button-tag-secondary: #a7a6a6;
+  --color-button-tag-secondary: #c3c3c3;
   --color-button-disabled: #c7c7c7;
   --color-chip-text: #656565;
 }
@@ -123,6 +123,10 @@ header {
   text-wrap: nowrap;
 }
 
+.category-btn button {
+  font-weight: 600;
+}
+
 .cart-wrapper {
   display: inline-flex;
   gap: 1rem;
@@ -220,7 +224,7 @@ header {
   display: none;
 }
 
-/* Product List & Breadcrumb */
+/* Product List */
 .breadcrumb {
   padding: 1rem;
   font-size: 1rem;
@@ -264,7 +268,7 @@ header {
 }
 
 .product-card .price {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 400;
 }
 

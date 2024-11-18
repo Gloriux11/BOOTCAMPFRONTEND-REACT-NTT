@@ -10,7 +10,7 @@ const searchInput = document.querySelector("#search input");
 const productList = document.getElementById("product-list");
 
 // Variables para paginación
-let limit = 10;
+let limit = 12;
 let skip = 0;
 let isLoading = false;
 let allProductsLoaded = false;
