@@ -166,7 +166,7 @@ header {
 .category-list li button {
   padding: 10px;
   cursor: pointer;
-  width: 100%;  
+  width: 100%;
 }
 
 .category-list li button:hover {
@@ -179,7 +179,7 @@ header {
   border-radius: 10px;
 }
 
-.brands > label {
+.brands>label {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -230,6 +230,7 @@ header {
   font-size: 1rem;
   font-weight: 500;
 }
+
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -250,14 +251,14 @@ header {
   object-fit: contain;
 }
 
-.product-card > h3 {
+.product-card>h3 {
   font-size: 0.938rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-button-tag-secondary);
 }
 
-.product-card > p:not(.price, .card-category) {
+.product-card>p:not(.price, .card-category) {
   display: -webkit-box;
   font-size: 1rem;
   font-weight: 600;
@@ -283,7 +284,7 @@ header {
   border-radius: 20px;
 }
 
-.product-card > button {
+.product-card>button {
   margin-top: 1rem;
   color: var(--color-black);
   border-radius: 25px;
@@ -296,7 +297,7 @@ header {
   font-weight: 700;
 }
 
-.product-card > button:hover {
+.product-card>button:hover {
   background-color: var(--color-secondary-hard);
   border: 1px solid var(--color-secondary-hard);
 }
@@ -398,6 +399,7 @@ header {
   .header-container {
     justify-content: space-between;
   }
+
   .search {
     display: none;
   }
@@ -454,6 +456,7 @@ header {
   .nav-links ul {
     gap: 1rem;
   }
+
   aside {
     padding: 50px 30px;
     width: 300px;

@@ -16,7 +16,7 @@
     <header>
       <div class="header-container">
         <div class="logo">
-          <img src="./assets/images/logo.png" alt="Logo Chacra" width="150" height="56" />
+          <img src="./src/assets/images/logo.png" alt="Logo Chacra" width="150" height="56" />
         </div>
         <div id="search" class="search">
           <span class="material-symbols-outlined">search</span>
@@ -36,11 +36,11 @@
         </nav>
         <div class="cart-wrapper">
           <button class="menu-btn">
-            <img src="./assets/images/menu-icon.webp" alt="Menú" width="24" height="24" />
+            <img src="./src/assets/images/menu-icon.webp" alt="Menú" width="24" height="24" />
           </button>
           <div class="cart">
             <span class="cart-count">0</span>
-            <img src="./assets/images/cart-icon.png" alt="Carrito de compras" width="24" height="24" />
+            <img src="./src/assets/images/cart-icon.png" alt="Carrito de compras" width="24" height="24" />
           </div>
         </div>
       </div>
@@ -71,14 +71,14 @@
       <main>
         <div class="filter-mobile">
           <button>
-            <img src="./assets/images/filter-icon.png" alt="Filtro" width="24" height="24" />
+            <img src="./src/assets/images/filter-icon.png" alt="Filtro" width="24" height="24" />
             Filtro
           </button>
         </div>
         <div id="product-list" class="product-list">
           <template class="product-card-template">
             <div class="product-card">
-              <img class="card-img" width="333" height="280" />
+              <img class="card-img" width="333" height="280" loading="lazy" />
               <h3 class="card-title"></h3>
               <p class="card-content"></p>
               <p class="card-price price"></p>
@@ -107,8 +107,8 @@
     <footer class="footer">
       <div class="first-row">
         <div class="social-icons">
-          <a href="#"><img src="../assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
-          <a href="#"><img src="../assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
+          <a href="#"><img src="./src/assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
+          <a href="#"><img src="./src/assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
         </div>
         <div class="links">
           <a href="#">Términos y Condiciones</a>
@@ -117,13 +117,13 @@
         </div>
       </div>
       <div class="social-icons mobile">
-        <a href="#"><img src="../assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
-        <a href="#"><img src="../assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
+        <a href="#"><img src="./src/assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
+        <a href="#"><img src="./src/assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
       </div>
       <p class="rights">&copy; Todos los derechos reservados.</p>
     </footer>
   </div>
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./src/main.ts"></script>
 </body>
 
 </html>
