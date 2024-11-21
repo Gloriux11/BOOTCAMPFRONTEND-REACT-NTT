@@ -12,6 +12,7 @@ const cardContainer = document.getElementById("product-list") as HTMLElement;
  * @param {Product[]} products  Array de productos
  */
 export function displayProducts(products: Product[]): void {
+  // este tipado podr'ia ir en otra carpeta llamada domain o types, importarlo y reutilizarlo
   const cart: { [key: number]: number } = JSON.parse(localStorage.getItem("cart") || "{}");
   // cardContainer.innerHTML = ""; // Limpiar contenedor
 

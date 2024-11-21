@@ -3,6 +3,7 @@ import { displayProducts } from "./components/displayProducts";
 import { ProductService } from "./services/product.service";
 import { debounce } from "./utils/debounce";
 import "./style.css";
+import { Nullable } from "./types/nullable.type";
 
 const productService = new ProductService();
 
@@ -14,7 +15,8 @@ let limit: number = 12;
 let skip: number = 0;
 let isLoading: boolean = false;
 let allProductsLoaded: boolean = false;
-let selectedCategory: string | null = null;
+// veo varios string | null podr'ias considerar crear un custom type 
+let selectedCategory:  Nullable<string> = null;
 let isSearching: boolean = false;
 
 // Fetch inicial de productos
