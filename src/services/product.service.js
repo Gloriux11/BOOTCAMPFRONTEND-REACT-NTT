@@ -2,6 +2,7 @@
  * Servicio para obtener productos y categorías
  * La data será obtenida de la API "'https://dummyjson.com/products'"
  */
+// genial, falta agregarle manejador de errores
 export class ProductService {
   baseUrl = "https://dummyjson.com/products";
 

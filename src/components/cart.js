@@ -1,3 +1,5 @@
+// la carpeta que tiene este archivo se llama componente pero tiene mucha m'as l'ogica que solo cart, tal vez puedes considerar separar la parte visual de la logica de negocio 
+
 const cartCountElement = document.querySelector(".cart-count");
 
 /**

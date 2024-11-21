@@ -1,6 +1,8 @@
 import { ProductService } from "../services/product.service";
-import { clearSearchInput, displayProducts } from "./displayProducts";
+// remover lo que no se usa
+import { clearSearchInput } from "./displayProducts";
 
+// no se usa
 const productService = new ProductService();
 
 const categoryTemplate = document.querySelector(".category-template");

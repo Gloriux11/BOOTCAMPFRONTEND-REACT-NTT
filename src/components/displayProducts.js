@@ -12,6 +12,7 @@ const cardContainer = document.getElementById("product-list");
  * @param {*} products  Array de productos
  */
 export function displayProducts(products) {
+  // esta lectura se repite muchas veces, cart deber'ia estar en una constante global para evitar escribirlo, la forma de leer del storage podr'ia estar en un util para evitar escribir lo mismo en varios lados
   const cart = JSON.parse(localStorage.getItem("cart")) || {};
   // cardContainer.innerHTML = ""; // Limpiar contenedor
 
