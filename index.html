@@ -1,129 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chacra a la Olla</title>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-
-<body>
-  <div id="app">
-    <!-- Header -->
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <img src="./src/assets/images/logo.png" alt="Logo Chacra" width="150" height="56" />
-        </div>
-        <div id="search" class="search">
-          <span class="material-symbols-outlined">search</span>
-          <input type="text" placeholder="Buscar productos..." />
-        </div>
-        <nav class="nav-links">
-          <ul>
-            <li><button class="login-btn">Iniciar Sesión</button></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Mis compras</a></li>
-            <li>
-              <button class="fav-btn">
-                <span class="material-symbols-outlined">favorite</span>
-              </button>
-            </li>
-          </ul>
-        </nav>
-        <div class="cart-wrapper">
-          <button class="menu-btn">
-            <img src="./src/assets/images/menu-icon.webp" alt="Menú" width="24" height="24" />
-          </button>
-          <div class="cart">
-            <span class="cart-count">0</span>
-            <img src="./src/assets/images/cart-icon.png" alt="Carrito de compras" width="24" height="24" />
-          </div>
-        </div>
-      </div>
-      <div class="search mobile">
-        <span class="material-symbols-outlined">search</span>
-        <input type="text" placeholder="Buscar productos..." />
-      </div>
-    </header>
-
-    <div class="main-container">
-      <!-- Filter aside -->
-      <aside>
-        <div class="category-btn">
-          <button>Categorías <span id="category-count"></span></button>
-        </div>
-        <div id="categories" class="categories">
-          <ul id="category-list" class="category-list">
-            <template class="category-template">
-              <li>
-                <button class="category-btn"></button>
-              </li>
-            </template>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- Product list -->
-      <main>
-        <div class="filter-mobile">
-          <button>
-            <img src="./src/assets/images/filter-icon.png" alt="Filtro" width="24" height="24" />
-            Filtro
-          </button>
-        </div>
-        <div id="product-list" class="product-list">
-          <template class="product-card-template">
-            <div class="product-card">
-              <img class="card-img" width="333" height="280" loading="lazy" />
-              <h3 class="card-title"></h3>
-              <p class="card-content"></p>
-              <p class="card-price price"></p>
-              <p class="card-category"></p>
-              <button class="add-to-cart-btn"></button>
-            </div>
-          </template>
-          <template class="quantity-controls-template">
-            <div class="quantity-controls" style="display: none;">
-              <button class="remove-btn" title="Eliminar">
-                <span class="material-symbols-outlined">delete</span>
-              </button>
-              <button class="decrease-btn" title="Disminuir" style="display: none;">
-                <span class="material-symbols-outlined">horizontal_rule</span>
-              </button>
-              <span class="quantity">1</span>
-              <button class="increase-btn" title="Aumentar">
-                <span class="material-symbols-outlined">add</span>
-              </button>
-            </div>
-          </template>
-        </div>
-      </main>
-    </div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="first-row">
-        <div class="social-icons">
-          <a href="#"><img src="./src/assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
-          <a href="#"><img src="./src/assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
-        </div>
-        <div class="links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Cookies</a>
-          <a href="#">Política de Privacidad</a>
-        </div>
-      </div>
-      <div class="social-icons mobile">
-        <a href="#"><img src="./src/assets/images/facebook-icon.png" alt="Facebook" width="24" /></a>
-        <a href="#"><img src="./src/assets/images/instagram-icon.png" alt="Instagram" width="24" /></a>
-      </div>
-      <p class="rights">&copy; Todos los derechos reservados.</p>
-    </footer>
-  </div>
-  <script type="module" src="./src/main.ts"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
