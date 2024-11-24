@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Navbar.css";
 
@@ -69,15 +70,17 @@ export const Navbar = ({ onSearch }: NavbarProps) => {
               height="24"
             />
           </button>
-          <div className="cart">
-            <span className="cart-count">0</span>
-            <img
-              src="./src/assets/images/cart-icon.png"
-              alt="Carrito de compras"
-              width="24"
-              height="24"
-            />
-          </div>
+          <Link to="/cart">
+            <div className="cart">
+              <span className="cart-count">0</span>
+              <img
+                src="./src/assets/images/cart-icon.png"
+                alt="Carrito de compras"
+                width="24"
+                height="24"
+              />
+            </div>
+          </Link>
         </div>
       </div>
       <div className="search mobile">

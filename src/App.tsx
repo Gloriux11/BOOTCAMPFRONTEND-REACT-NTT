@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import { Footer } from "./components/common/Footer/Footer";
@@ -5,6 +6,7 @@ import { Navbar } from "./components/common/Navbar/Navbar";
 import { Products } from "./components/products/Products";
 import { Product } from "./types/product.type";
 import { ProductService } from "./services/product.service";
+import CartPage from "./CartPage";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,11 +18,14 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Navbar onSearch={handleSearch} />
-      <Products products={products}/>
+      <Routes>
+        <Route path="/" element={<Products products={products} />} />
+        <Route path="/cart" element={<CartPage />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
