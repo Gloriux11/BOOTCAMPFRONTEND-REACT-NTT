@@ -19,11 +19,17 @@ export class ProductService {
     limit: number = 12,
     skip: number = 0
   ): Promise<Product[]> {
-    return await fetch(`${this.baseUrl}?limit=${limit}&skip=${skip}`)
-      .then((response) => response.json())
-      .then((data: Paged<Product>) => {
-        return data.products;
-      });
+    try {
+      const response = await fetch(`${this.baseUrl}?limit=${limit}&skip=${skip}`);
+      if (!response.ok) {
+        throw new Error(`Error fetching products: ${response.statusText}`);
+      }
+      const data: Paged<Product> = await response.json();
+      return data.products;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 
   /**
@@ -32,11 +38,17 @@ export class ProductService {
    * @returns {Promise<Product[]>} Una promesa que resuelve a un array de productos
    */
   async searchProducts(query: string): Promise<Product[]> {
-    return await fetch(`${this.baseUrl}/search?q=${query}`)
-      .then((response) => response.json())
-      .then((data) => {
-        return data.products;
-      });
+    try {
+      const response = await fetch(`${this.baseUrl}/search?q=${query}`);
+      if (!response.ok) {
+        throw new Error(`Error searching products: ${response.statusText}`);
+      }
+      const data = await response.json();
+      return data.products;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 
   /**
@@ -44,11 +56,17 @@ export class ProductService {
    * @returns {Promise<Category[]>} Una promesa que resuelve a un array de categorías
    */
   async fetchCategories(): Promise<Category[]> {
-    return await fetch(`${this.baseUrl}/categories`)
-      .then((response) => response.json())
-      .then((data) => {
-        return data;
-      });
+    try {
+      const response = await fetch(`${this.baseUrl}/categories`);
+      if (!response.ok) {
+        throw new Error(`Error fetching categories: ${response.statusText}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 
   /**
@@ -63,13 +81,19 @@ export class ProductService {
     limit: number = 12,
     skip: number = 0
   ): Promise<Product[]> {
-    return await fetch(
-      `${this.baseUrl}/category/${category}?limit=${limit}&skip=${skip}`
-    )
-      .then((response) => response.json())
-      .then((data: Paged<Product>) => {
-        return data.products;
-      });
+    try {
+      const response = await fetch(
+        `${this.baseUrl}/category/${category}?limit=${limit}&skip=${skip}`
+      );
+      if (!response.ok) {
+        throw new Error(`Error fetching products by category: ${response.statusText}`);
+      }
+      const data: Paged<Product> = await response.json();
+      return data.products;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 
   /**
@@ -78,13 +102,19 @@ export class ProductService {
    * @returns {Promise<string>} Una promesa que resuelve a un string con el nombre de la categoría
    */
   async fetchCategoryNameBySlug(slug: string = "beauty"): Promise<string> {
-    return await fetch(`${this.baseUrl}/categories`)
-      .then((response) => response.json())
-      .then((data) => {
-        const category = data.find(
-          (category: Category) => category.slug === slug
-        );
-        return category ? category.name : "";
-      });
+    try {
+      const response = await fetch(`${this.baseUrl}/categories`);
+      if (!response.ok) {
+        throw new Error(`Error fetching category name by slug: ${response.statusText}`);
+      }
+      const data = await response.json();
+      const category = data.find(
+        (category: Category) => category.slug === slug
+      );
+      return category ? category.name : "";
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
   }
 }
