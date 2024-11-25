@@ -4,14 +4,15 @@
   justify-content: space-between;
   gap: 10px;
   margin-top: 1rem;
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-chip-text);
   border-radius: 25px;
   padding: 10px 20px;
+  height: 30px;
 }
 
 .quantity-controls button {
   background: transparent;
-  color: var(--color-black);
+  color: var(--color-chip-text);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -21,6 +22,7 @@
 }
 
 .quantity-controls button:hover {
+  border: 1px solid var(--color-chip-text);
   border: none;
 }
 
@@ -31,5 +33,6 @@
 
 .quantity {
   font-size: 16px;
+  color: var(--color-chip-text);;
   font-weight: bold;
 }

@@ -89,30 +89,35 @@ const ShippingForm: React.FC = () => {
       <h3>Formulario de Envío</h3>
       <div className="form-row">
         <label>Nombre:</label>
-        <input
-          type="text"
-          name="nombre"
-          placeholder="Ingresa tu nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-        />
-        {errors.nombre && <label className="error">{errors.nombre}</label>}
+        <div>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+          />
+          {errors.nombre && <label className="error">{errors.nombre}</label>}
+        </div>
       </div>
       <div className="form-row">
         <label>Apellidos:</label>
-        <input
-          type="text"
-          name="apellidos"
-          placeholder="Ingresa tus apellidos"
-          value={formData.apellidos}
-          onChange={handleChange}
-        />
-        {errors.apellidos && (
-          <label className="error">{errors.apellidos}</label>
-        )}
+        <div>
+          <input
+            type="text"
+            name="apellidos"
+            placeholder="Ingresa tus apellidos"
+            value={formData.apellidos}
+            onChange={handleChange}
+          />
+          {errors.apellidos && (
+            <label className="error">{errors.apellidos}</label>
+          )}
+        </div>
       </div>
       <div className="form-row">
         <label>Distrito:</label>
+        <div>
         <select
           name="distrito"
           value={formData.distrito}
@@ -126,9 +131,11 @@ const ShippingForm: React.FC = () => {
           ))}
         </select>
         {errors.distrito && <label className="error">{errors.distrito}</label>}
+        </div>
       </div>
       <div className="form-row">
         <label>Dirección:</label>
+        <div>
         <input
           type="text"
           name="direccion"
@@ -139,9 +146,12 @@ const ShippingForm: React.FC = () => {
         {errors.direccion && (
           <label className="error">{errors.direccion}</label>
         )}
+        </div>
+        
       </div>
       <div className="form-row">
         <label>Referencia:</label>
+        <div>
         <input
           type="text"
           name="referencia"
@@ -152,17 +162,20 @@ const ShippingForm: React.FC = () => {
         {errors.referencia && (
           <label className="error">{errors.referencia}</label>
         )}
+        </div>
       </div>
       <div className="form-row">
         <label>Celular:</label>
-        <input
-          type="text"
-          name="celular"
-          placeholder="Ingresa tu número celular"
-          value={formData.celular}
-          onChange={handleChange}
-        />
-        {errors.celular && <label className="error">{errors.celular}</label>}
+        <div>
+          <input
+            type="text"
+            name="celular"
+            placeholder="Ingresa tu número celular"
+            value={formData.celular}
+            onChange={handleChange}
+          />
+          {errors.celular && <label className="error">{errors.celular}</label>}
+        </div>
       </div>
       <button type="submit">Comprar</button>
     </form>

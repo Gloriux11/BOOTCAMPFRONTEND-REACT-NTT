@@ -112,22 +112,22 @@ td {
 
 .decrease-btn,
 .increase-btn {
-  border: 1px solid var(--color-secondary-hard);
+  border: 1px solid var(--color-background);
   background: none;
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
-  color: var(--color-primary);
+  color: var(--color-background);
 }
 
 .decrease-btn:hover,
 .increase-btn:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-background);
 }
 
 .quantity {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 450;
 }
 
 .remove-item-btn {
@@ -141,8 +141,8 @@ td {
 }
 
 .remove-item-btn:hover {
-    font-weight: 420;
-  background-color: var(--color-button-tag-primary);
+  font-weight: 420;
+  background-color:var(--color-background);
 }
 
 /* -------------------- Cart Summary -------------------- */
@@ -202,13 +202,6 @@ td {
     text-align: left; 
 }
 
-.shipping-form .form-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
 .shipping-form label {
   display: block;
   width: 25%;
@@ -218,25 +211,16 @@ td {
 }
 
 .shipping-form input, select {
+  font-family: poppins;
     display: block;
   width: 75%;
   padding: 10px;
-  margin-bottom: 20px;
   border: 1px solid var(--color-chip-text);
+  border: 1px solid var(--color-secondary-hard);
   border-radius: 27px;
   font-size: 14px;
 }
 
-.shipping-form input,
-.shipping-form select {
-  font-family: poppins;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid var(--color-secondary-hard);
-  border-radius: 10px;
-  font-size: 14px;
-  background-color: var(--color-white);
-}
 
 .shipping-form input:focus,
 .shipping-form select:focus {
@@ -248,6 +232,25 @@ td {
   font-family: poppins;
   padding: 0px;
   height: 100px;
+}
+
+.shipping-form .form-row{
+  display: flex;
+}
+
+.shipping-form .form-row > div{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.shipping-form .form-row .error {
+  color: var(--color-tertiary);
+  margin-left: 12px;
+  margin-top: 5px;
+  font-size: 0.8rem;
 }
 
 .shipping-form button {
@@ -266,4 +269,52 @@ td {
 
 .shipping-form button:hover {
   background-color: var(--color-secondary);
+}
+
+
+/* -------------------- Empty Cart -------------------- */
+
+.cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cart-empty > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+} 
+
+.cart-empty h1{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.cart-empty p{
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  width: 70%;
+  color: var(--color-black);
+}
+
+.cart-empty button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 27px;
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
 }

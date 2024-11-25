@@ -49,6 +49,7 @@ const QuantityControls = ({ product }: QuantityControlsProps) => {
       <button
         className="increase-btn"
         title="Aumentar"
+        disabled={item && item.quantity >= product.stock}
         onClick={handleIncreaseQuantity}
       >
         <span className="material-symbols-outlined">add</span>
