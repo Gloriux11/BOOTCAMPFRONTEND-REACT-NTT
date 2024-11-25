@@ -4,8 +4,6 @@ import CartItemRow from "./CartItemRow";
 
 interface CartItemListProps {
   items: Product[];
-  onRemoveItem: (id: number) => void;
-  onUpdateQuantity: (id: number, quantity: number) => void;
 }
 
 const CartItemList: React.FC<CartItemListProps> = ({ items }) => {
@@ -17,7 +15,7 @@ const CartItemList: React.FC<CartItemListProps> = ({ items }) => {
             <th className="Productos">PRODUCTOS</th>
             <th className="Cantidad">CANTIDAD</th>
             <th className="Subtotal">SUB-TOTAL</th>
-            <th className="Eliminar">ELIMINAR</th>
+            <th className="Eliminar"></th>
           </tr>
         </thead>
         <tbody>

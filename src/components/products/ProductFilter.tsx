@@ -6,8 +6,9 @@ interface ProductFilterProps {
   onCategorySelect: (category: string) => void;
 }
 
-export const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
+const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const productService = new ProductService();
 
   useEffect(() => {
@@ -17,7 +18,12 @@ export const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
     };
 
     fetchCategories();
-  });
+  }, []);
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    onCategorySelect(category);
+  };
 
   return (
     <aside>
@@ -30,8 +36,10 @@ export const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
         <ul id="category-list" className="category-list">
           <li key="all">
             <button
-              className="category-btn"
-              onClick={() => onCategorySelect("")}
+              className={`category-btn ${
+                selectedCategory === "" ? "selected" : ""
+              }`}
+              onClick={() => handleCategorySelect("")}
             >
               All
             </button>
@@ -39,8 +47,10 @@ export const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
           {categories.map((category) => (
             <li key={category.slug}>
               <button
-                className="category-btn"
-                onClick={() => onCategorySelect(category.slug)}
+                className={`category-btn ${
+                  selectedCategory === category.slug ? "selected" : ""
+                }`}
+                onClick={() => handleCategorySelect(category.slug)}
               >
                 {category.name}
               </button>
@@ -51,3 +61,5 @@ export const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
     </aside>
   );
 };
+
+export default ProductFilter;

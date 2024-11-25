@@ -1,10 +1,24 @@
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Product } from "../../types/product.type";
+import QuantityControls from "../common/QuantityControls/QuantityControls";
 
 interface ProductCardProps {
   product: Product;
 }
 
-export const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    return null;
+  }
+  const { state, dispatch } = cartContext;
+  const inCart = state.items.some((item: Product) => item.id === product.id);
+
+  const handleAddToCart = () => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
   return (
     <div className="product-card">
       <img
@@ -15,11 +29,19 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         height="280"
         loading="lazy"
       />
-      <h3 className="card-title">{product.title}</h3>
-      <p className="card-content">{product.description}</p>
-      <p className="card-price price">${product.price}</p>
+      <h3 className="card-title">{product.brand}</h3>
+      <p className="card-content">{product.title}</p>
+      <p className="card-price price">S/. {product.price}</p>
       <p className="card-category">{product.category}</p>
-      <button className="add-to-cart-btn">Agregar al carrito</button>
+      {inCart ? (
+        <QuantityControls product={product} />
+      ) : (
+        <button className="add-to-cart-btn" onClick={handleAddToCart}>
+          Agregar al carrito
+        </button>
+      )}
     </div>
   );
 };
+
+export default ProductCard;

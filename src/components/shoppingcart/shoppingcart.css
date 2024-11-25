@@ -72,8 +72,12 @@ body {
 }
 
 td {
-  padding: 10px 0px;
+  padding: 10px;
   vertical-align: middle;
+}
+
+.item-price {
+  text-align: center;
 }
 
 .product-info {

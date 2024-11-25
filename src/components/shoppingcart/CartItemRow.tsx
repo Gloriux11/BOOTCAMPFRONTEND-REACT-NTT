@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Product } from "../../types/product.type";
+import QuantityControls from "../common/QuantityControls/QuantityControls";
 import "./shoppingcart.css";
 
 interface CartItemRowProps {
@@ -7,6 +9,16 @@ interface CartItemRowProps {
 }
 
 const CartItemRow: React.FC<CartItemRowProps> = ({ item }) => {
+  const context = useContext(CartContext);
+  if (!context) {
+    return null;
+  }
+  const { dispatch } = context;
+
+  const handleRemoveFromCart = () => {
+    dispatch({ type: "REMOVE_FROM_CART", payload: item });
+  };
+
   return (
     <tr>
       <td>
@@ -19,17 +31,15 @@ const CartItemRow: React.FC<CartItemRowProps> = ({ item }) => {
         </div>
       </td>
       <td>
-        <div className="quantity-controls">
-          <button className="decrease-btn">-</button>
-          <span className="quantity">2</span>
-          <button className="increase-btn">+</button>
-        </div>
+        <QuantityControls product={item} />
       </td>
       <td>
-        <p>S/. {item.price.toFixed(2)}</p>
+        <p className="item-price">S/. {item.price.toFixed(2)}</p>
       </td>
       <td>
-      <button className="remove-item-btn">Eliminar</button>
+        <button className="remove-item-btn" onClick={handleRemoveFromCart}>
+          Eliminar
+        </button>
       </td>
     </tr>
   );

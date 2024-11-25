@@ -1,31 +1,30 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Footer } from "./components/common/Footer/Footer";
-import { Navbar } from "./components/common/Navbar/Navbar";
-import { Products } from "./components/products/Products";
-import { Product } from "./types/product.type";
+import Layout from "./components/common/Layout/Layout";
+import CartPage from "./pages/CartPage";
+import ProductPage from "./pages/ProductPage";
 import { ProductService } from "./services/product.service";
-import CartPage from "./CartPage";
+import { Product } from "./types/product.type";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const productService = new ProductService();
 
-  const handleSearch = async (query: string) => {
+  const handleSearch = async (query: string) => { 
     const fetchedProducts = await productService.searchProducts(query);
     setProducts(fetchedProducts);
   };
 
   return (
-    <Router>
-      <Navbar onSearch={handleSearch} />
-      <Routes>
-        <Route path="/" element={<Products products={products} />} />
-        <Route path="/cart" element={<CartPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <BrowserRouter>
+      <Layout onSearch={handleSearch}>
+        <Routes>
+          <Route path="/" element={<ProductPage products={products} />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
