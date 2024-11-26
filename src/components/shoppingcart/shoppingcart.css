@@ -1,3 +1,5 @@
+/* lo ideal es que cada componente tenga su propia hoja de estilos y esten alk mismo nivel para que puedan ser f'acilmente reutilizables de lo contrario se genera una dependencia y complejidad si se quisiera extraer */
+
 @import "../../index.css";
 
 body {

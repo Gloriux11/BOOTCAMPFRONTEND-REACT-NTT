@@ -8,6 +8,7 @@ const EmptyCart = () => {
         <img src="./src/assets/images/carritoempty.png"></img>
         <h1>Tu carrito está vacío</h1>
         <p>Agrega productos y da el primer paso para iniciar tu compra.</p>
+        {/* usemos enum para las rutas */}
         <button onClick={() => navigate("/")}>Seguir comprando</button>
       </div>
     </div>

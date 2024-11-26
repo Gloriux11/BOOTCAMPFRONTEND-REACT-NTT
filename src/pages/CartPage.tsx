@@ -8,6 +8,7 @@ import { CartItem } from "../types/cartItem.type";
 import EmptyCart from "../components/shoppingcart/CartEmpty";
 
 const CartPage: React.FC = () => {
+  // esto debe estar fuera de la p'agina porque estas dandole m'as responsabilidades de las qeu deber'ia tener, la unica funci'on de CartPage deber'ia ser renderizar el contenido y permitir interactuar con 'el
   const cartContext = useContext(CartContext);
   if (!cartContext) {
     return <p>Error: Cart context is not available</p>;

@@ -9,6 +9,7 @@ interface CartItemRowProps {
 }
 
 const CartItemRow: React.FC<CartItemRowProps> = ({ item }) => {
+  // esto no deber'ia estar aqu'i debe crearse un hook que haga esta validaci'on y solo retornar el valor o despachador
   const context = useContext(CartContext);
   if (!context) {
     return null;
