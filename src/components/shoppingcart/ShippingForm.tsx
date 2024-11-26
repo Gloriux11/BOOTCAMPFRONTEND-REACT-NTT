@@ -1,3 +1,5 @@
+
+// si envio los nombres, apellidos, direccion y referencia vacio igual registra
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
@@ -12,6 +14,7 @@ const ShippingForm: React.FC = () => {
   const navigate = useNavigate(); 
 
   const districts = useDistricts();
+  // se debe tipar para permitir unicamente las keys conocidas
   const [formData, setFormData] = useState({
     nombre: "",
     apellidos: "",
@@ -20,6 +23,7 @@ const ShippingForm: React.FC = () => {
     referencia: "",
     celular: "",
   });
+  // se debe tipar para permitir unicamente las keys conocidas
   const [errors, setErrors] = useState({
     nombre: "",
     apellidos: "",
@@ -30,10 +34,13 @@ const ShippingForm: React.FC = () => {
   });
 
   const validate = () => {
+    // tpda esta l'ogica podr'ia estar en otro archivo
     const newErrors: any = {};
+    // que hace este regex? deber'ia estar en enum para dar m'as detalles
     if (!formData.nombre.match(/^[a-zA-Z\s]+$/)) {
       newErrors.nombre = "Debe ingresar un valor válido";
     }
+    // que hace este regex? deber'ia estar en enum para dar m'as detalles
     if (!formData.apellidos.match(/^[a-zA-Z\s]+$/)) {
       newErrors.apellidos = "Debe ingresar un valor válido";
     }
@@ -46,6 +53,7 @@ const ShippingForm: React.FC = () => {
     if (!formData.referencia) {
       newErrors.referencia = "Campo obligatorio";
     }
+    // que hace este regex? deber'ia estar en enum para dar m'as detalles
     if (!formData.celular.match(/^\d+$/)) {
       newErrors.celular = "Debe ingresar un valor válido";
     }

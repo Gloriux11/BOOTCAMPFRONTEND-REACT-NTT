@@ -9,6 +9,7 @@ import { Product } from "./types/product.type";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
+  // al declararlo dentro de un componente la instancia se vuelve a definir en cada actualizaci'on del componente
   const productService = new ProductService();
 
   const handleSearch = async (query: string) => { 

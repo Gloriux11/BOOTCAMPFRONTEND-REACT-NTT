@@ -20,8 +20,10 @@ const ProductPage = ({ products }: ProductsProps) => {
   const fetchProducts = async (category?: string, page: number = 0) => {
     if (isFetching.current) return;
     isFetching.current = true;
+    // si tu valor por defecto es 12 en la funci'on por qu'e volverlo a definir? ta; vez podr'ias usar un parametro de tipo objeto
     const limit = 12;
     const skip = page * limit;
+    // falta tipar 
     let fetchedProducts;
     if (category) {
       fetchedProducts = await productService.fetchProductsByCategory(category, limit, skip);
