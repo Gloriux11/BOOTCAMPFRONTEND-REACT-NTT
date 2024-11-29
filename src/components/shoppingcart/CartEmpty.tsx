@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { routes } from "../../routes/routes";
 
 const EmptyCart = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const EmptyCart = () => {
         <img src="./src/assets/images/carritoempty.png"></img>
         <h1>Tu carrito está vacío</h1>
         <p>Agrega productos y da el primer paso para iniciar tu compra.</p>
-        <button onClick={() => navigate("/")}>Seguir comprando</button>
+        <button onClick={() => navigate(routes.Principal)}>Seguir comprando</button>
       </div>
     </div>
   );

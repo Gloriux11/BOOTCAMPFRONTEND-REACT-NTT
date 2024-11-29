@@ -1,7 +1,10 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import { routes } from "../../routes/routes";
 import useDistricts from "../../hooks/useDistricts";
+import { FormData } from "../../types/formData.type";
+import { Errors } from "../../types/errors.type";
 
 const ShippingForm: React.FC = () => {
   const cartContext = useContext(CartContext);
@@ -12,7 +15,7 @@ const ShippingForm: React.FC = () => {
   const navigate = useNavigate(); 
 
   const districts = useDistricts();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nombre: "",
     apellidos: "",
     distrito: "",
@@ -20,7 +23,7 @@ const ShippingForm: React.FC = () => {
     referencia: "",
     celular: "",
   });
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<Errors>({
     nombre: "",
     apellidos: "",
     distrito: "",
@@ -30,28 +33,46 @@ const ShippingForm: React.FC = () => {
   });
 
   const validate = () => {
-    const newErrors: any = {};
-    if (!formData.nombre.match(/^[a-zA-Z\s]+$/)) {
+    const newErrors: Errors = {
+      nombre: "",
+      apellidos: "",
+      distrito: "",
+      direccion: "",
+      referencia: "",
+      celular: "",
+    };
+    
+    // Validación de los campos
+    if (!formData.nombre.trim() || !formData.nombre.match(/^[a-zA-Z\s]+$/)) {
       newErrors.nombre = "Debe ingresar un valor válido";
     }
-    if (!formData.apellidos.match(/^[a-zA-Z\s]+$/)) {
+    
+    if (!formData.apellidos.trim() || !formData.apellidos.match(/^[a-zA-Z\s]+$/)) {
       newErrors.apellidos = "Debe ingresar un valor válido";
     }
-    if (!formData.distrito) {
+    
+    if (!formData.distrito.trim()) {
       newErrors.distrito = "Campo obligatorio";
     }
-    if (!formData.direccion) {
+    
+    if (!formData.direccion.trim()) {
       newErrors.direccion = "Campo obligatorio";
     }
-    if (!formData.referencia) {
+    
+    if (!formData.referencia.trim()) {
       newErrors.referencia = "Campo obligatorio";
     }
-    if (!formData.celular.match(/^\d+$/)) {
+    
+    if (!formData.celular.trim() || !formData.celular.match(/^\d{9}$/)) {
       newErrors.celular = "Debe ingresar un valor válido";
     }
+  
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  
+    // Si hay errores, retornar false; si no, true
+    return Object.keys(newErrors).every((error) => error === "");
   };
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -64,8 +85,11 @@ const ShippingForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Solo se procede si la validación es exitosa
     if (validate()) {
       alert("Su pedido se registró con éxito");
+  
       // Limpiar el formulario y el carrito
       setFormData({
         nombre: "",
@@ -75,12 +99,13 @@ const ShippingForm: React.FC = () => {
         referencia: "",
         celular: "",
       });
-
+  
       dispatch({
         type: "CLEAR_CART",
         payload: null,
-      }); // Agrega esta acción en el reducer
-      navigate("/");
+      });
+  
+      navigate(routes.Principal); // Navegar después de un registro exitoso
     }
   };
 

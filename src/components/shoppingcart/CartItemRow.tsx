@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../hooks/useCart";
 import { Product } from "../../types/product.type";
 import QuantityControls from "../common/QuantityControls/QuantityControls";
 import "./shoppingcart.css";
@@ -9,11 +8,7 @@ interface CartItemRowProps {
 }
 
 const CartItemRow: React.FC<CartItemRowProps> = ({ item }) => {
-  const context = useContext(CartContext);
-  if (!context) {
-    return null;
-  }
-  const { dispatch } = context;
+  const { dispatch } = useCart();
 
   const handleRemoveFromCart = () => {
     dispatch({ type: "REMOVE_FROM_CART", payload: item });

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/common/Layout/Layout";
@@ -9,7 +9,7 @@ import { Product } from "./types/product.type";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
-  const productService = new ProductService();
+  const productService = useMemo(() => new ProductService(), []);
 
   const handleSearch = async (query: string) => { 
     const fetchedProducts = await productService.searchProducts(query);
