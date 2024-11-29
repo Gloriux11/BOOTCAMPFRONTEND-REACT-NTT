@@ -5,6 +5,7 @@ import { routes } from "../../routes/routes";
 import useDistricts from "../../hooks/useDistricts";
 import { FormData } from "../../types/formData.type";
 import { Errors } from "../../types/errors.type";
+import { validateForm } from "../../utils/validation";
 
 const ShippingForm: React.FC = () => {
   const cartContext = useContext(CartContext);
@@ -33,44 +34,12 @@ const ShippingForm: React.FC = () => {
   });
 
   const validate = () => {
-    const newErrors: Errors = {
-      nombre: "",
-      apellidos: "",
-      distrito: "",
-      direccion: "",
-      referencia: "",
-      celular: "",
-    };
+    const newErrors = validateForm(formData); 
     
-    // Validación de los campos
-    if (!formData.nombre.trim() || !formData.nombre.match(/^[a-zA-Z\s]+$/)) {
-      newErrors.nombre = "Debe ingresar un valor válido";
-    }
-    
-    if (!formData.apellidos.trim() || !formData.apellidos.match(/^[a-zA-Z\s]+$/)) {
-      newErrors.apellidos = "Debe ingresar un valor válido";
-    }
-    
-    if (!formData.distrito.trim()) {
-      newErrors.distrito = "Campo obligatorio";
-    }
-    
-    if (!formData.direccion.trim()) {
-      newErrors.direccion = "Campo obligatorio";
-    }
-    
-    if (!formData.referencia.trim()) {
-      newErrors.referencia = "Campo obligatorio";
-    }
-    
-    if (!formData.celular.trim() || !formData.celular.match(/^\d{9}$/)) {
-      newErrors.celular = "Debe ingresar un valor válido";
-    }
-  
     setErrors(newErrors);
-  
+
     // Si hay errores, retornar false; si no, true
-    return Object.keys(newErrors).every((error) => error === "");
+    return Object.keys(newErrors).every((error) => newErrors[error as keyof Errors] === "");
   };
   
 

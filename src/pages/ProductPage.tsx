@@ -4,6 +4,7 @@ import { ProductService } from "../services/product.service";
 import ProductFilter from "../components/products/ProductFilter";
 import ProductCard from "../components/products/ProductCard";
 import "../components/products/product.css";
+import { FetchParams } from "../types/fetchParams.type";
 
 interface ProductsProps {
   products: Product[];
@@ -17,17 +18,19 @@ const ProductPage = ({ products }: ProductsProps) => {
   const productService = new ProductService();
   const isFetching = useRef(false); // Para evitar múltiples llamadas a la API
 
-  const fetchProducts = async (category?: string, page: number = 0) => {
+  const fetchProducts = async ({ category, page, limit = 12 }: FetchParams) => {
     if (isFetching.current) return;
     isFetching.current = true;
-    const limit = 12;
+
     const skip = page * limit;
-    let fetchedProducts;
+    let fetchedProducts: Product[];
+
     if (category) {
       fetchedProducts = await productService.fetchProductsByCategory(category, limit, skip);
     } else {
       fetchedProducts = await productService.fetchProducts(limit, skip);
     }
+
     if (fetchedProducts.length < limit) {
       setHasMore(false);
     }
@@ -36,7 +39,7 @@ const ProductPage = ({ products }: ProductsProps) => {
   };
 
   useEffect(() => {
-    fetchProducts(category, page);
+    fetchProducts({ category, page, limit: 12 });
   }, [category, page]);
 
   const handleCategorySelect = (category: string) => {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Category } from "../../types/category.type";
 import { ProductService } from "../../services/product.service";
+import { routes } from "../../routes/routes";
 
 interface ProductFilterProps {
   onCategorySelect: (category: string) => void;
@@ -39,7 +40,7 @@ const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
               className={`category-btn ${
                 selectedCategory === "" ? "selected" : ""
               }`}
-              onClick={() => handleCategorySelect("")}
+              onClick={() => handleCategorySelect(routes.Principal)}
             >
               All
             </button>
