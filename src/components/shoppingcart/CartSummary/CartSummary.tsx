@@ -1,4 +1,5 @@
 import React from "react";
+import "./cartsummary.css";
 
 interface CartSummaryProps {
   totalPrice: number;

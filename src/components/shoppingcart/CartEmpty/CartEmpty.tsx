@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { routes } from "../../routes/routes";
+import { routes } from "../../../routes/routes";
+import "./cartempty.css";
 
 const EmptyCart = () => {
   const navigate = useNavigate();

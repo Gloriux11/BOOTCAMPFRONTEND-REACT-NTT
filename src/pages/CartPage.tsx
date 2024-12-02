@@ -1,9 +1,9 @@
 import React from "react";
-import CartItemList from "../components/shoppingcart/CartItemList";
-import CartSummary from "../components/shoppingcart/CartSummary";
-import ShippingForm from "../components/shoppingcart/ShippingForm";
-import "../components/shoppingcart/shoppingcart.css";
-import EmptyCart from "../components/shoppingcart/CartEmpty";
+import CartItemList from "../components/shoppingcart/CartItemList/CartItemList";
+import CartSummary from "../components/shoppingcart/CartSummary/CartSummary";
+import ShippingForm from "../components/shoppingcart/ShippingForm/ShippingForm";
+import "../components/shoppingcart/CartPage.css";
+import EmptyCart from "../components/shoppingcart/CartEmpty/CartEmpty";
 import { useCart } from "../hooks/useCart"; 
 
 const CartPage: React.FC = () => {

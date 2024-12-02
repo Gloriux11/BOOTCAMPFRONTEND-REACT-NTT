@@ -1,0 +1,35 @@
+@import '../../styles/main.css';
+@import './CartEmpty/CartEmpty.css';
+@import './CartItemList/CartItemList.css';
+@import './CartItemRow/CartItemRow.css';
+@import './CartSummary/CartSummary.css';
+@import './ShippingForm/ShippingForm.css';
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 44px;
+  margin: 20px 70px 70px 70px;
+}
+
+.cart-title {
+    margin: 20px;
+    padding: 10px 10px 0px 10px;
+    font-size: 20px; 
+    font-weight: 500;
+    color: var(--color-black); 
+    text-align: left; 
+  }
+ 
+  .cart-item-list {
+    padding: 30px 40px;
+    border-radius: 27px;
+    background-color: var(--color-white);
+  }

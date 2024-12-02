@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../context/CartContext";
-import { routes } from "../../routes/routes";
-import useDistricts from "../../hooks/useDistricts";
-import { FormData } from "../../types/formData.type";
-import { Errors } from "../../types/errors.type";
-import { validateForm } from "../../utils/validation";
+import { CartContext } from "../../../context/CartContext";
+import { routes } from "../../../routes/routes";
+import useDistricts from "../../../hooks/useDistricts";
+import { FormData } from "../../../types/formData.type";
+import { Errors } from "../../../types/errors.type";
+import { validateForm } from "../../../utils/validation";
+import "./shippingform.css";
 
 const ShippingForm: React.FC = () => {
   const cartContext = useContext(CartContext);

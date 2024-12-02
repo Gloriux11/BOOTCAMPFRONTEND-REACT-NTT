@@ -1,0 +1,90 @@
+@import '../../styles/main.css';
+
+.shipping-form {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px;
+    padding: 20px;
+    border-radius: 27px;
+    background-color: var(--color-white);
+  }
+  
+  .shipping-form h3 {
+      font-size: 16px; 
+      font-weight: 500;
+      font-weight: 600;
+      color: var(--color-black); 
+      text-align: left; 
+  }
+  
+  .shipping-form label {
+    display: block;
+    width: 25%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--color-black);
+  }
+  
+  .shipping-form input, select {
+    font-family: poppins;
+    display: block;
+    width: 75%;
+    padding: 10px;
+    border: 1px solid var(--color-chip-text);
+    border: 1px solid var(--color-secondary-hard);
+    border-radius: 27px;
+    font-size: 14px;
+  }
+  
+  
+  .shipping-form input:focus,
+  .shipping-form select:focus {
+    outline: none;
+    border: 1px solid var(--color-primary);
+  }
+  
+  .shipping-form select option {
+    font-family: poppins;
+    padding: 0px;
+    height: 100px;
+  }
+  
+  .shipping-form .form-row{
+    display: flex;
+  }
+  
+  .shipping-form .form-row > div{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .shipping-form .form-row .error {
+    color: var(--color-tertiary);
+    margin-left: 12px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+  }
+  
+  .shipping-form button {
+    width: 369px;
+    height: 54px;
+    text-align: center;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+    border: none;
+    border-radius: 27px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shipping-form button:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  

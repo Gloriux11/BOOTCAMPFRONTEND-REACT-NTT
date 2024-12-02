@@ -1,0 +1,46 @@
+@import '../../styles/main.css';
+
+.cart-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .cart-empty > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+  } 
+  
+  .cart-empty h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+  
+  .cart-empty p{
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    width: 70%;
+    color: var(--color-black);
+  }
+  
+  .cart-empty button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 27px;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  }

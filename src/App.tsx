@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Layout from "./components/common/Layout/Layout";
 import CartPage from "./pages/CartPage";
 import ProductPage from "./pages/ProductPage";

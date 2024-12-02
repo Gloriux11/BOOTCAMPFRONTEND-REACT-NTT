@@ -1,0 +1,32 @@
+@import '../../styles/main.css';
+
+.cart-item-list th{
+    border-bottom: 2px solid var(--color-table-title);
+    color: var(--color-table-title);
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.Productos td, th{
+    text-align: left;
+    width: 40%;
+}
+
+.Cantidad td, th{
+    width: 20%;
+    text-align: center;
+}
+
+.Subtotal td, th{
+    width: 20%;
+    text-align: center;
+}
+.Eliminar td, th{
+    width: 20%;
+    text-align: center;
+}
+
+td {
+  padding: 10px;
+  vertical-align: middle;
+}
