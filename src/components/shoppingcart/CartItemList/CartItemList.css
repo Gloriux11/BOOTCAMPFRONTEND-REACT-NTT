@@ -1,4 +1,4 @@
-@import '../../styles/main.css';
+@import '../../../styles/main.css';
 
 .cart-item-list th{
     border-bottom: 2px solid var(--color-table-title);

@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "../../../types/product.type";
 import CartItemRow from "../CartItemRow/CartItemRow";
+import "./CartItemList.css"
 
 interface CartItemListProps {
   items: Product[];

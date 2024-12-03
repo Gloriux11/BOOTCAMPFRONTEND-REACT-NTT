@@ -1,7 +1,7 @@
 import { useCart } from "../../../hooks/useCart";
 import { Product } from "../../../types/product.type";
 import QuantityControls from "../../common/QuantityControls/QuantityControls";
-import "./shoppingcart.css";
+import "./CartItemRow.css";
 
 interface CartItemRowProps {
   item: Product;
