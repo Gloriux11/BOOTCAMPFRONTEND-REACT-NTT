@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
-import "./Navbar.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ProductService } from "../../../services/product.service";
 import { Product } from "../../../types/product.type";
+// import "./Navbar.css";
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -40,7 +40,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
       }
     }, 600); // 600ms debounce time
 
-    setDebounceTimeout(newTimeout);
+    setDebounceTimeout(Number(newTimeout));
   };
 
   const cartItemCount = state.items.length;
