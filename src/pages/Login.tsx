@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import ForgotPassword from "./../components/Login/ForgotPassword/ForgotPassword";
 import './../components/Login/Login.css' 
+import { useForgotPassword } from "./../hooks/useForgotPassword"
 
 const Login: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+    const {
+        isModalOpen,
+        isConfirmationOpen,
+        email,
+        openModal,
+        closeModal,
+        handleEmailChange,
+        handleSubmit,
+      } = useForgotPassword();
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleResetPassword = (email: string) => {
-    console.log("Correo enviado para resetear contraseña:", email);
-    setIsModalOpen(false); 
-  };
+      const onSubmit = (email: string) => {
+        console.log("Correo enviado a:", email);
+      };
 
   return (
     <div className="login-container">
@@ -29,7 +29,7 @@ const Login: React.FC = () => {
           <div className="form-group">
             <input type="password" placeholder="Contraseña" required />
           </div>
-          <a href="#" className="forgot-password" onClick={handleOpenModal}>
+          <a href="#" className="forgot-password" onClick={openModal}>
             Olvidé Contraseña
           </a>
           <button type="submit" className="login-button">Iniciar Sesión</button>
@@ -39,8 +39,11 @@ const Login: React.FC = () => {
       {/* Modal de reseteo de contraseña */}
       <ForgotPassword
         isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        onSubmit={handleResetPassword}
+        email={email}
+        isConfirmationOpen={isConfirmationOpen}
+        onClose={closeModal}
+        onEmailChange={handleEmailChange}
+        onSubmit={onSubmit}
       />
     </div>
   );
