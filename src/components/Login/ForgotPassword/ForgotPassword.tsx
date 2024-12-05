@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./ForgotPassword.css";
 import { ForgotPasswordProps } from "./../../../types/ForgotPassword.type";
 import EmailSent from "../EmailSent/EmailSent";
+import { validateEmail } from "./../../../utils/emailvalidation";
+
+interface Errors {
+  email: string;
+}
 
 const ForgotPassword: React.FC<ForgotPasswordProps> = ({
   isOpen,
@@ -10,19 +15,38 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
   onEmailChange,
   onSubmit,
 }) => {
+  // Estado para manejar los errores
+  const [errors, setErrors] = useState<Errors>({ email: "" });
   const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
 
   if (!isOpen) return null;
 
+  const validate = (): boolean => {
+    const newErrors: Errors = { email: "" };
+
+    const emailError = validateEmail(email);
+    if (emailError) {
+      newErrors.email = emailError;
+    }
+
+    setErrors(newErrors);
+
+    // Retorna true si no hay errores
+    return Object.keys(newErrors).every((key) => newErrors[key as keyof Errors] === "");
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(email);
-    setIsConfirmationOpen(true); // Abre el modal de confirmación
+
+    if (validate()) {
+      setIsConfirmationOpen(true); // Abre el modal de confirmación si no hay errores
+      onSubmit(email); // Llama a la función de envío
+    }
   };
 
   const handleCloseConfirmation = () => {
     setIsConfirmationOpen(false); // Cierra el modal de confirmación
-    onClose(); // Cierra también el modal principal
+    onClose(); // Cierra el modal principal
   };
 
   return (
@@ -32,13 +56,20 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
           <h2>Resetea tu contraseña</h2>
           <p>Ingresa tu correo electrónico</p>
           <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-              value={email}
-              onChange={(e) => onEmailChange(e.target.value)}
-              required
-            />
+            <div className="form-row">
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => {
+                  onEmailChange(e.target.value);
+                  setErrors({ email: "" }); // Limpia el error al escribir
+                }}
+                required
+              />
+              {errors.email && <span className="error">{errors.email}</span>}
+            </div>
             <div className="modal-buttons">
               <button type="submit" className="btn btn-primary">
                 Enviar
