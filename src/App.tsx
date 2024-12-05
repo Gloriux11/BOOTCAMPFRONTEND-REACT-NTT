@@ -5,6 +5,8 @@ import CartPage from "./pages/CartPage";
 import ProductPage from "./pages/ProductPage";
 import { ProductService } from "./services/product.service";
 import { Product } from "./types/product.type";
+import { routes } from "./routes/routes"
+import Login from "./pages/Login";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -19,8 +21,9 @@ function App() {
     <BrowserRouter>
       <Layout onSearch={handleSearch}>
         <Routes>
-          <Route path="/" element={<ProductPage products={products} />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route path={routes.Principal} element={<ProductPage products={products} />} />
+          <Route path={routes.Carrito} element={<CartPage />} />
+          <Route path={routes.Login} element={<Login/>} />
         </Routes>
       </Layout>
     </BrowserRouter>
