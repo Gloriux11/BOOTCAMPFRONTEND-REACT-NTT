@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Category } from "../../types/category.type";
 import { ProductService } from "../../services/product.service";
 import { routes } from "../../routes/routes";
@@ -10,7 +10,8 @@ interface ProductFilterProps {
 const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
-  const productService = new ProductService();
+
+  const productService = useMemo(() => new ProductService(), []);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -19,7 +20,7 @@ const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
     };
 
     fetchCategories();
-  }, []);
+  }, [productService]);
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
@@ -37,10 +38,10 @@ const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
         <ul id="category-list" className="category-list">
           <li key="all">
             <button
-              className={`category-btn ${
-                selectedCategory === "" ? "selected" : ""
-              }`}
+              className={`category-btn ${selectedCategory === "" ? "selected" : ""
+                }`}
               onClick={() => handleCategorySelect(routes.Principal)}
+              data-testid="category-button"
             >
               All
             </button>
@@ -48,10 +49,10 @@ const ProductFilter = ({ onCategorySelect }: ProductFilterProps) => {
           {categories.map((category) => (
             <li key={category.slug}>
               <button
-                className={`category-btn ${
-                  selectedCategory === category.slug ? "selected" : ""
-                }`}
+                className={`category-btn ${selectedCategory === category.slug ? "selected" : ""
+                  }`}
                 onClick={() => handleCategorySelect(category.slug)}
+                data-testid="category-button"
               >
                 {category.name}
               </button>

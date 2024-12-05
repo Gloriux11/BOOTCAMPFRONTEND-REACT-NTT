@@ -20,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <div className="product-card">
+    <div className="product-card" data-testid={`product-card-${product.id}`}>
       <img
         className="card-img"
         src={product.images[0]}

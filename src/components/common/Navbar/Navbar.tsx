@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ProductService } from "../../../services/product.service";
@@ -21,7 +21,7 @@ const Navbar = ({ onSearch }: NavbarProps) => {
   const { state } = cartContext;
   const navigate = useNavigate();
   const location = useLocation();
-  const productService = new ProductService();
+  const productService = useMemo(() => new ProductService(), []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;

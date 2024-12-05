@@ -83,22 +83,24 @@ const ShippingForm: React.FC = () => {
     <form className="shipping-form" onSubmit={handleSubmit}>
       <h3>Formulario de Envío</h3>
       <div className="form-row">
-        <label>Nombre:</label>
+        <label htmlFor="nombre">Nombre:</label>
         <div>
           <input
+            id="nombre"
             type="text"
             name="nombre"
             placeholder="Ingresa tu nombre"
             value={formData.nombre}
             onChange={handleChange}
           />
-          {errors.nombre && <label className="error">{errors.nombre}</label>}
+          {errors.nombre && <span className="error">{errors.nombre}</span>}
         </div>
       </div>
       <div className="form-row">
-        <label>Apellidos:</label>
+        <label htmlFor="apellidos">Apellidos:</label>
         <div>
           <input
+            id="apellidos"
             type="text"
             name="apellidos"
             placeholder="Ingresa tus apellidos"
@@ -106,14 +108,15 @@ const ShippingForm: React.FC = () => {
             onChange={handleChange}
           />
           {errors.apellidos && (
-            <label className="error">{errors.apellidos}</label>
+            <span className="error">{errors.apellidos}</span>
           )}
         </div>
       </div>
       <div className="form-row">
-        <label>Distrito:</label>
+        <label htmlFor="distrito">Distrito:</label>
         <div>
         <select
+          id="distrito"
           name="distrito"
           value={formData.distrito}
           onChange={handleChange}
@@ -125,13 +128,14 @@ const ShippingForm: React.FC = () => {
             </option>
           ))}
         </select>
-        {errors.distrito && <label className="error">{errors.distrito}</label>}
+        {errors.distrito && <span className="error">{errors.distrito}</span>}
         </div>
       </div>
       <div className="form-row">
-        <label>Dirección:</label>
+        <label htmlFor="direccion">Dirección:</label>
         <div>
         <input
+          id="direccion"
           type="text"
           name="direccion"
           placeholder="Ingresa tu dirección"
@@ -139,15 +143,16 @@ const ShippingForm: React.FC = () => {
           onChange={handleChange}
         />
         {errors.direccion && (
-          <label className="error">{errors.direccion}</label>
+          <span className="error">{errors.direccion}</span>
         )}
         </div>
         
       </div>
       <div className="form-row">
-        <label>Referencia:</label>
+        <label htmlFor="referencia">Referencia:</label>
         <div>
         <input
+          id="referencia"
           type="text"
           name="referencia"
           placeholder="Ingresa una referencia"
@@ -155,21 +160,22 @@ const ShippingForm: React.FC = () => {
           onChange={handleChange}
         />
         {errors.referencia && (
-          <label className="error">{errors.referencia}</label>
+          <span className="error">{errors.referencia}</span>
         )}
         </div>
       </div>
       <div className="form-row">
-        <label>Celular:</label>
+        <label htmlFor="celular">Celular:</label>
         <div>
           <input
+            id="celular"
             type="text"
             name="celular"
             placeholder="Ingresa tu número celular"
             value={formData.celular}
             onChange={handleChange}
           />
-          {errors.celular && <label className="error">{errors.celular}</label>}
+          {errors.celular && <span className="error">{errors.celular}</span>}
         </div>
       </div>
       <button type="submit">Comprar</button>
