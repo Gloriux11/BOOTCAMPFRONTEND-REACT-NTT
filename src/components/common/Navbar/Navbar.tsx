@@ -3,7 +3,7 @@ import { CartContext } from "../../../context/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ProductService } from "../../../services/product.service";
 import { Product } from "../../../types/product.type";
-// import "./Navbar.css";
+import "./Navbar.css";
 
 interface NavbarProps {
   onSearch: (query: string) => void;
