@@ -243,7 +243,13 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -365,7 +371,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -508,22 +520,24 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
     &lt;form className="shipping-form" onSubmit={handleSubmit}&gt;
       &lt;h3&gt;Formulario de Envío&lt;/h3&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Nombre:&lt;/label&gt;
+        &lt;label htmlFor="nombre"&gt;Nombre:&lt;/label&gt;
         &lt;div&gt;
           &lt;input
+            id="nombre"
             type="text"
             name="nombre"
             placeholder="Ingresa tu nombre"
             value={formData.nombre}
             onChange={handleChange}
           /&gt;
-          {errors.nombre &amp;&amp; &lt;label className="error"&gt;{errors.nombre}&lt;/label&gt;}
+          {errors.nombre &amp;&amp; &lt;span className="error"&gt;{errors.nombre}&lt;/span&gt;}
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Apellidos:&lt;/label&gt;
+        &lt;label htmlFor="apellidos"&gt;Apellidos:&lt;/label&gt;
         &lt;div&gt;
           &lt;input
+            id="apellidos"
             type="text"
             name="apellidos"
             placeholder="Ingresa tus apellidos"
@@ -531,14 +545,15 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
             onChange={handleChange}
           /&gt;
           {errors.apellidos &amp;&amp; (
-            &lt;label className="error"&gt;{errors.apellidos}&lt;/label&gt;
+            &lt;span className="error"&gt;{errors.apellidos}&lt;/span&gt;
           )}
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Distrito:&lt;/label&gt;
+        &lt;label htmlFor="distrito"&gt;Distrito:&lt;/label&gt;
         &lt;div&gt;
         &lt;select
+          id="distrito"
           name="distrito"
           value={formData.distrito}
           onChange={handleChange}
@@ -550,13 +565,14 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
             &lt;/option&gt;
           ))}
         &lt;/select&gt;
-        {errors.distrito &amp;&amp; &lt;label className="error"&gt;{errors.distrito}&lt;/label&gt;}
+        {errors.distrito &amp;&amp; &lt;span className="error"&gt;{errors.distrito}&lt;/span&gt;}
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Dirección:&lt;/label&gt;
+        &lt;label htmlFor="direccion"&gt;Dirección:&lt;/label&gt;
         &lt;div&gt;
         &lt;input
+          id="direccion"
           type="text"
           name="direccion"
           placeholder="Ingresa tu dirección"
@@ -564,15 +580,16 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
           onChange={handleChange}
         /&gt;
         {errors.direccion &amp;&amp; (
-          &lt;label className="error"&gt;{errors.direccion}&lt;/label&gt;
+          &lt;span className="error"&gt;{errors.direccion}&lt;/span&gt;
         )}
         &lt;/div&gt;
         
       &lt;/div&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Referencia:&lt;/label&gt;
+        &lt;label htmlFor="referencia"&gt;Referencia:&lt;/label&gt;
         &lt;div&gt;
         &lt;input
+          id="referencia"
           type="text"
           name="referencia"
           placeholder="Ingresa una referencia"
@@ -580,21 +597,22 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
           onChange={handleChange}
         /&gt;
         {errors.referencia &amp;&amp; (
-          &lt;label className="error"&gt;{errors.referencia}&lt;/label&gt;
+          &lt;span className="error"&gt;{errors.referencia}&lt;/span&gt;
         )}
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div className="form-row"&gt;
-        &lt;label&gt;Celular:&lt;/label&gt;
+        &lt;label htmlFor="celular"&gt;Celular:&lt;/label&gt;
         &lt;div&gt;
           &lt;input
+            id="celular"
             type="text"
             name="celular"
             placeholder="Ingresa tu número celular"
             value={formData.celular}
             onChange={handleChange}
           /&gt;
-          {errors.celular &amp;&amp; &lt;label className="error"&gt;{errors.celular}&lt;/label&gt;}
+          {errors.celular &amp;&amp; &lt;span className="error"&gt;{errors.celular}&lt;/span&gt;}
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;button type="submit"&gt;Comprar&lt;/button&gt;
@@ -610,7 +628,7 @@ const ShippingForm: React.FC = <span class="cstat-no" title="statement not cover
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-03T16:53:29.681Z
+                at 2024-12-05T05:10:28.635Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

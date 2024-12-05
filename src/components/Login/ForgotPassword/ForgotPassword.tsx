@@ -56,20 +56,21 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({
           <h2>Resetea tu contraseña</h2>
           <p>Ingresa tu correo electrónico</p>
           <form onSubmit={handleSubmit}>
-            <div className="form-row">
-              <input
-                type="email"
-                name="email"
-                placeholder="Correo electrónico"
-                value={email}
-                onChange={(e) => {
-                  onEmailChange(e.target.value);
-                  setErrors({ email: "" }); // Limpia el error al escribir
-                }}
-                required
-              />
-              {errors.email && <span className="error">{errors.email}</span>}
-            </div>
+          <div className="form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              value={email}
+              onChange={(e) => {
+                onEmailChange(e.target.value);
+                setErrors({ email: "" }); // Limpia el error al escribir
+              }}
+              required
+            />
+            {errors.email && <span className="error">{errors.email}</span>} {/* Renderiza el error */}
+          </div>
+
             <div className="modal-buttons">
               <button type="submit" className="btn btn-primary">
                 Enviar
