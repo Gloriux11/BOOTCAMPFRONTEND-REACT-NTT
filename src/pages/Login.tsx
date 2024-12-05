@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import ForgotPassword from "./../components/Login/ForgotPassword/ForgotPassword"; 
+import ForgotPassword from "./../components/Login/ForgotPassword/ForgotPassword";
+import './../components/Login/Login.css' 
 
 const Login: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +21,7 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Inicie Sesión</h2>
+        <h2>Iniciar Sesión</h2>
         <form action="#" method="POST">
           <div className="form-group">
             <input type="text" placeholder="Usuario" required />
