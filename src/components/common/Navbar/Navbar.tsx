@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { ProductService } from "../../../services/product.service";
 import { Product } from "../../../types/product.type";
 import "./Navbar.css";
+import { routes } from "./../../../routes/routes";
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -88,17 +89,22 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         <nav className="nav-links">
           <ul>
             <li>
-              <button className="login-btn">Iniciar Sesión</button>
+            <button
+                className="login-btn"
+                onClick={() => navigate(routes.Login)}
+              >
+                Iniciar Sesión
+              </button>
             </li>
             <li>
-              <a href="#">Nosotros</a>
+              <a href="#">Bienvendo Usuario Usarín</a>
             </li>
             <li>
               <a href="#">Mis compras</a>
             </li>
             <li>
               <button className="fav-btn">
-                <span className="material-symbols-outlined">favorite</span>
+              <span className="material-symbols-outlined">logout</span>
               </button>
             </li>
           </ul>
