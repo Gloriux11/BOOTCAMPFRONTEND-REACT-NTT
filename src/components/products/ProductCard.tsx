@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Product } from "../../types/product.type";
 import QuantityControls from "../common/QuantityControls/QuantityControls";
+import { useAuth } from '../../context/AuthContext';
+import LoginModal from "../common/LoginModal/LoginModal";
 
 interface ProductCardProps {
   product: Product;
@@ -9,6 +11,9 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const cartContext = useContext(CartContext);
+  const { isAuthenticated } = useAuth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   if (!cartContext) {
     return null;
   }
@@ -16,7 +21,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const inCart = state.items.some((item: Product) => item.id === product.id);
 
   const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      setIsModalOpen(true);
+      return;
+    }
     dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -40,6 +53,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           Agregar al carrito
         </button>
       )}
+      <LoginModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

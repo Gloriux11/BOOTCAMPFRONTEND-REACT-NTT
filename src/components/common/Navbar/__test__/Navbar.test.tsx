@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import '@testing-library/jest-dom'
 import { MemoryRouter } from "react-router-dom";
 import Navbar from "../Navbar";
+import { AuthProvider } from "../../../../context/AuthContext";
 import { CartContext } from "../../../../context/CartContext";
 import { ProductService } from "../../../../services/product.service";
 
@@ -17,11 +18,13 @@ it("should update search query and call onSearch with debounce", async () => {
   };
 
   render(
+    <AuthProvider>
     <CartContext.Provider value={mockCartContext}>
       <MemoryRouter>
         <Navbar onSearch={mockOnSearch} />
       </MemoryRouter>
     </CartContext.Provider>
+    </AuthProvider>
   );
 
   // Obtener todos los inputs con el placeholder "Buscar productos..."

@@ -9,6 +9,7 @@ interface QuantityControlsProps {
 
 const QuantityControls = ({ product }: QuantityControlsProps) => {
   const context = useContext(CartContext);
+    
   if (!context) {
     return null;
   }

@@ -93,6 +93,11 @@ header {
   border-radius: 46px;
   padding: 10px 20px;
   text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.logout-btn {
+  cursor: pointer;
 }
 
 .nav-links ul li a {

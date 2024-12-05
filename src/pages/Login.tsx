@@ -1,34 +1,61 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import ForgotPassword from "./../components/Login/ForgotPassword/ForgotPassword";
-import './../components/Login/Login.css' 
+import './../components/Login/Login.css'
 import { useForgotPassword } from "./../hooks/useForgotPassword"
+import { AuthService } from "./../services/auth.service";
+import { useAuth } from "./../context/AuthContext";
 
 const Login: React.FC = () => {
-    const {
-        isModalOpen,
-        isConfirmationOpen,
-        email,
-        openModal,
-        closeModal,
-        handleEmailChange,
-        handleSubmit,
-      } = useForgotPassword();
+  const authService = useMemo(() => new AuthService(), []);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { login } = useAuth();
 
-      const onSubmit = (email: string) => {
-        console.log("Correo enviado a:", email);
-      };
+  const {
+    isModalOpen,
+    isConfirmationOpen,
+    email,
+    openModal,
+    closeModal,
+    handleEmailChange,
+    handleSubmit,
+  } = useForgotPassword();
+
+  const onSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      await authService.login(username, password);
+      login();
+    } catch (error) {
+      setError("Error al iniciar sesión. Por favor, verifica tus credenciales.");
+    }
+  };
 
   return (
     <div className="login-container">
       <div className="login-box">
         <h2>Iniciar Sesión</h2>
-        <form action="#" method="POST">
+        <form onSubmit={onSubmit}>
           <div className="form-group">
-            <input type="text" placeholder="Usuario" required />
+            <input
+              type="text"
+              placeholder="Usuario"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
           </div>
           <div className="form-group">
-            <input type="password" placeholder="Contraseña" required />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
+          {error && <p className="error-message">{error}</p>}
           <a href="#" className="forgot-password" onClick={openModal}>
             Olvidé Contraseña
           </a>
@@ -37,18 +64,16 @@ const Login: React.FC = () => {
       </div>
 
       {/* Modal de reseteo de contraseña */}
-      <ForgotPassword
-        isOpen={isModalOpen}
-        email={email}
-        isConfirmationOpen={isConfirmationOpen}
-        onClose={closeModal}
-        onEmailChange={handleEmailChange}
-        onSubmit={onSubmit}
-      />
+      {/* <ForgotPassword
+                isOpen={isModalOpen}
+                email={email}
+                isConfirmationOpen={isConfirmationOpen}
+                onClose={closeModal}
+                onEmailChange={handleEmailChange}
+                onSubmit={onSubmit}
+            /> */}
     </div>
   );
 };
 
 export default Login;
-
-

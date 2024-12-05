@@ -5,6 +5,7 @@ import { ProductService } from "../../../services/product.service";
 import { Product } from "../../../types/product.type";
 import "./Navbar.css";
 import { routes } from "./../../../routes/routes";
+import { useAuth } from "../../../context/AuthContext";
 
 interface NavbarProps {
   onSearch: (query: string) => void;
@@ -18,10 +19,11 @@ const Navbar = ({ onSearch }: NavbarProps) => {
   if (!cartContext) {
     throw new Error("CartContext must be used within a CartProvider");
   }
-  const { state } = cartContext;
+  const { state, dispatch } = cartContext;
   const navigate = useNavigate();
   const location = useLocation();
   const productService = useMemo(() => new ProductService(), []);
+  const { isAuthenticated, user, logout } = useAuth();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -42,6 +44,14 @@ const Navbar = ({ onSearch }: NavbarProps) => {
     }, 600); // 600ms debounce time
 
     setDebounceTimeout(Number(newTimeout));
+  };
+
+  const handleLogout = () => {
+    if (user) {
+      localStorage.removeItem(`cart_${user.id}`);
+    }
+    dispatch({ type: "CLEAR_CART", payload: null });
+    logout();
   };
 
   const cartItemCount = state.items.length;
@@ -88,25 +98,30 @@ const Navbar = ({ onSearch }: NavbarProps) => {
         </div>
         <nav className="nav-links">
           <ul>
-            <li>
-            <button
-                className="login-btn"
-                onClick={() => navigate(routes.Login)}
-              >
-                Iniciar Sesión
-              </button>
-            </li>
-            <li>
-              <a href="#">Bienvendo Usuario Usarín</a>
-            </li>
-            <li>
-              <a href="#">Mis compras</a>
-            </li>
-            <li>
-              <button className="fav-btn">
-              <span className="material-symbols-outlined">logout</span>
-              </button>
-            </li>
+            {isAuthenticated ? (
+              <>
+                <li>
+                  <a href="#">Bienvenido {user.firstName + " " + user.lastName}</a>
+                </li>
+                <li>
+                  <a href="#">Mis compras</a>
+                </li>
+                <li>
+                  <button className="logout-btn" onClick={handleLogout}>
+                    <span className="material-symbols-outlined">logout</span>
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <button
+                  className="login-btn"
+                  onClick={() => navigate(routes.Login)}
+                >
+                  Iniciar Sesión
+                </button>
+              </li>
+            )}
           </ul>
         </nav>
         <div className="cart-wrapper">
