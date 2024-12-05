@@ -4,4 +4,5 @@ export interface ForgotPasswordProps {
   onClose: () => void;
   onEmailChange: (email: string) => void;
   onSubmit: (email: string) => void;
+  isConfirmationOpen: boolean; 
 }

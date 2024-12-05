@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import ForgotPassword from "./../components/Login/ForgotPassword/ForgotPassword";
-import './../components/Login/Login.css'
-import { useForgotPassword } from "./../hooks/useForgotPassword"
+import './../components/Login/Login.css';
+import { useForgotPassword } from "./../hooks/useForgotPassword";
 import { AuthService } from "./../services/auth.service";
 import { useAuth } from "./../context/AuthContext";
 
@@ -19,10 +19,11 @@ const Login: React.FC = () => {
     openModal,
     closeModal,
     handleEmailChange,
-    handleSubmit,
+    handleSubmit: handleForgotPasswordSubmit,
   } = useForgotPassword();
 
-  const onSubmit = async (event: React.FormEvent) => {
+  // Maneja el envío del formulario de inicio de sesión
+  const onLoginSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       await authService.login(username, password);
@@ -36,7 +37,7 @@ const Login: React.FC = () => {
     <div className="login-container">
       <div className="login-box">
         <h2>Iniciar Sesión</h2>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onLoginSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -56,7 +57,7 @@ const Login: React.FC = () => {
             />
           </div>
           {error && <p className="error-message">{error}</p>}
-          <a href="#" className="forgot-password" onClick={openModal}>
+          <a href="#" className="forgot-password" onClick={(e) => { e.preventDefault(); openModal(); }}>
             Olvidé Contraseña
           </a>
           <button type="submit" className="login-button">Iniciar Sesión</button>
@@ -64,14 +65,14 @@ const Login: React.FC = () => {
       </div>
 
       {/* Modal de reseteo de contraseña */}
-      {/* <ForgotPassword
-                isOpen={isModalOpen}
-                email={email}
-                isConfirmationOpen={isConfirmationOpen}
-                onClose={closeModal}
-                onEmailChange={handleEmailChange}
-                onSubmit={onSubmit}
-            /> */}
+      <ForgotPassword
+        isOpen={isModalOpen}
+        email={email}
+        isConfirmationOpen={isConfirmationOpen}
+        onClose={closeModal}
+        onEmailChange={handleEmailChange}
+        onSubmit={handleForgotPasswordSubmit}
+      />
     </div>
   );
 };

@@ -15,8 +15,7 @@ export const useForgotPassword = () => {
     setEmail(newEmail);
   };
 
-  const handleSubmit = (onSubmit: (email: string) => void) => {
-    onSubmit(email);
+  const handleSubmit = () => {
     setIsConfirmationOpen(true);
   };
 
@@ -27,6 +26,6 @@ export const useForgotPassword = () => {
     openModal,
     closeModal,
     handleEmailChange,
-    handleSubmit,
+    handleSubmit, 
   };
 };

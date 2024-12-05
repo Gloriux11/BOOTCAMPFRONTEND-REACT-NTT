@@ -1,4 +1,4 @@
-import { RegexPatterns } from "@/types/regex.enum";
+import { RegexPatterns } from "./../types/regex.enum";
 
 /**
  * Valida si un correo electrónico tiene un formato válido.

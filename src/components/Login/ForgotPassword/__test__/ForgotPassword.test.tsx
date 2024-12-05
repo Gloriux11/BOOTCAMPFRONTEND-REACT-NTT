@@ -20,6 +20,7 @@ describe("ForgotPassword Component", () => {
     onClose: jest.fn(),
     onEmailChange: jest.fn(),
     onSubmit: jest.fn(),
+    isConfirmationOpen: false,
   };
 
   it("should not render when isOpen is false", () => {
@@ -35,11 +36,13 @@ describe("ForgotPassword Component", () => {
 
   it("should show error message when email is invalid", () => {
     render(<ForgotPassword {...defaultProps} email="invalid-email" />);
+    
     const submitButton = screen.getByRole("button", { name: /enviar/i });
+    
+    // Actúa sobre el botón de submit
     fireEvent.click(submitButton);
-  
-    screen.debug(); // Muestra el estado del DOM en la consola
-  
+    
+    // Verifica que el mensaje de error se muestra en el DOM
     expect(screen.getByText("Debe ingresar un correo electrónico válido.")).toBeInTheDocument();
   });
   
