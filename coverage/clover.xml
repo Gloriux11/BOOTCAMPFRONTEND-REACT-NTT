@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733244809733" clover="3.2.0">
-  <project timestamp="1733244809733" name="All files">
-    <metrics statements="340" coveredstatements="74" conditionals="121" coveredconditionals="4" methods="89" coveredmethods="16" elements="550" coveredelements="94" complexity="0" loc="340" ncloc="340" packages="18" files="22" classes="22"/>
+<coverage generated="1734017962403" clover="3.2.0">
+  <project timestamp="1734017962404" name="All files">
+    <metrics statements="342" coveredstatements="65" conditionals="121" coveredconditionals="4" methods="89" coveredmethods="14" elements="552" coveredelements="83" complexity="0" loc="342" ncloc="342" packages="18" files="22" classes="22"/>
     <package name="src">
       <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="App.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\App.tsx">
+      <file name="App.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/App.tsx">
         <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -23,7 +23,7 @@
     </package>
     <package name="src.components.common.Footer">
       <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Footer.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\common\Footer\Footer.tsx">
+      <file name="Footer.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/common/Footer/Footer.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -33,7 +33,7 @@
     </package>
     <package name="src.components.common.Layout">
       <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="Layout.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\common\Layout\Layout.tsx">
+      <file name="Layout.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/common/Layout/Layout.tsx">
         <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -43,13 +43,14 @@
       </file>
     </package>
     <package name="src.components.common.Navbar">
-      <metrics statements="36" coveredstatements="27" conditionals="10" coveredconditionals="3" methods="10" coveredmethods="4"/>
-      <file name="Navbar.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\common\Navbar\Navbar.tsx">
-        <metrics statements="36" coveredstatements="27" conditionals="10" coveredconditionals="3" methods="10" coveredmethods="4"/>
+      <metrics statements="37" coveredstatements="28" conditionals="10" coveredconditionals="3" methods="10" coveredmethods="4"/>
+      <file name="Navbar.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/common/Navbar/Navbar.tsx">
+        <metrics statements="37" coveredstatements="28" conditionals="10" coveredconditionals="3" methods="10" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="3" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
@@ -86,7 +87,7 @@
     </package>
     <package name="src.components.common.QuantityControls">
       <metrics statements="17" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="QuantityControls.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\common\QuantityControls\QuantityControls.tsx">
+      <file name="QuantityControls.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/common/QuantityControls/QuantityControls.tsx">
         <metrics statements="17" coveredstatements="0" conditionals="17" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -109,7 +110,7 @@
     </package>
     <package name="src.components.products">
       <metrics statements="33" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="11" coveredmethods="0"/>
-      <file name="ProductCard.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\products\ProductCard.tsx">
+      <file name="ProductCard.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/products/ProductCard.tsx">
         <metrics statements="13" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -125,7 +126,7 @@
         <line num="22" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
       </file>
-      <file name="ProductFilter.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\products\ProductFilter.tsx">
+      <file name="ProductFilter.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/products/ProductFilter.tsx">
         <metrics statements="20" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -151,7 +152,7 @@
     </package>
     <package name="src.components.shoppingcart.CartEmpty">
       <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="CartEmpty.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\shoppingcart\CartEmpty\CartEmpty.tsx">
+      <file name="CartEmpty.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/shoppingcart/CartEmpty/CartEmpty.tsx">
         <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -164,19 +165,20 @@
       </file>
     </package>
     <package name="src.components.shoppingcart.CartItemList">
-      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="CartItemList.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\shoppingcart\CartItemList\CartItemList.tsx">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="CartItemList.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/shoppingcart/CartItemList/CartItemList.tsx">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.shoppingcart.CartItemRow">
       <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="CartItemRow.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\shoppingcart\CartItemRow\CartItemRow.tsx">
+      <file name="CartItemRow.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/shoppingcart/CartItemRow/CartItemRow.tsx">
         <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -191,7 +193,7 @@
     </package>
     <package name="src.components.shoppingcart.CartSummary">
       <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="CartSummary.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\shoppingcart\CartSummary\CartSummary.tsx">
+      <file name="CartSummary.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/shoppingcart/CartSummary/CartSummary.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -201,7 +203,7 @@
     </package>
     <package name="src.components.shoppingcart.ShippingForm">
       <metrics statements="32" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="6" coveredmethods="0"/>
-      <file name="ShippingForm.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\components\shoppingcart\ShippingForm\ShippingForm.tsx">
+      <file name="ShippingForm.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/components/shoppingcart/ShippingForm/ShippingForm.tsx">
         <metrics statements="32" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="2" count="0" type="stmt"/>
@@ -238,12 +240,12 @@
       </file>
     </package>
     <package name="src.context">
-      <metrics statements="22" coveredstatements="7" conditionals="36" coveredconditionals="0" methods="7" coveredmethods="1"/>
-      <file name="CartContext.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\context\CartContext.tsx">
-        <metrics statements="22" coveredstatements="7" conditionals="36" coveredconditionals="0" methods="7" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
+      <metrics statements="22" coveredstatements="5" conditionals="36" coveredconditionals="0" methods="7" coveredmethods="0"/>
+      <file name="CartContext.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/context/CartContext.tsx">
+        <metrics statements="22" coveredstatements="5" conditionals="36" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
         <line num="24" count="0" type="cond" truecount="0" falsecount="6"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -259,27 +261,27 @@
         <line num="62" count="0" type="cond" truecount="0" falsecount="8"/>
         <line num="68" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.hooks">
-      <metrics statements="20" coveredstatements="8" conditionals="1" coveredconditionals="0" methods="5" coveredmethods="1"/>
-      <file name="useCart.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\hooks\useCart.ts">
-        <metrics statements="9" coveredstatements="8" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="cond" truecount="0" falsecount="1"/>
+      <metrics statements="20" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="useCart.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/hooks/useCart.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
       </file>
-      <file name="useDistricts.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\hooks\useDistricts.ts">
+      <file name="useDistricts.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/hooks/useDistricts.ts">
         <metrics statements="11" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -296,7 +298,7 @@
     </package>
     <package name="src.pages">
       <metrics statements="51" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="12" coveredmethods="0"/>
-      <file name="CartPage.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\pages\CartPage.tsx">
+      <file name="CartPage.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/pages/CartPage.tsx">
         <metrics statements="12" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -311,7 +313,7 @@
         <line num="16" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
       </file>
-      <file name="ProductPage.tsx" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\pages\ProductPage.tsx">
+      <file name="ProductPage.tsx" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/pages/ProductPage.tsx">
         <metrics statements="39" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="11" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -356,7 +358,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="routes.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\routes\routes.ts">
+      <file name="routes.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/routes/routes.ts">
         <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="2" count="0" type="stmt"/>
@@ -365,7 +367,7 @@
     </package>
     <package name="src.services">
       <metrics statements="47" coveredstatements="32" conditionals="12" coveredconditionals="1" methods="10" coveredmethods="10"/>
-      <file name="product.service.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\services\product.service.ts">
+      <file name="product.service.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/services/product.service.ts">
         <metrics statements="47" coveredstatements="32" conditionals="12" coveredconditionals="1" methods="10" coveredmethods="10"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="8" type="stmt"/>
@@ -418,7 +420,7 @@
     </package>
     <package name="src.types">
       <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="regex.enum.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\types\regex.enum.ts">
+      <file name="regex.enum.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/types/regex.enum.ts">
         <metrics statements="3" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="2" count="0" type="stmt"/>
@@ -427,14 +429,14 @@
     </package>
     <package name="src.utils">
       <metrics statements="28" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="8" coveredmethods="0"/>
-      <file name="cartUtils.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\utils\cartUtils.ts">
+      <file name="cartUtils.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/utils/cartUtils.ts">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
       </file>
-      <file name="validation.ts" path="C:\Users\USER\Documents\Bootcamp - React\BOOTCAMPFRONTEND-REACT-NTT\src\utils\validation.ts">
+      <file name="validation.ts" path="/Users/maxcm/Desktop/React/Gloria Cisneros/src/utils/validation.ts">
         <metrics statements="24" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="1" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>

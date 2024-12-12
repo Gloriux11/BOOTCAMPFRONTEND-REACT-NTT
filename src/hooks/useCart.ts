@@ -1,3 +1,4 @@
+// test
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { calculateTotal } from "../utils/cartUtils"; // nueva función para calcular el total
