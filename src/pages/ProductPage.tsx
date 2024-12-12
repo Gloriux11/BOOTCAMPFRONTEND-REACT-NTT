@@ -1,3 +1,5 @@
+// faltan test y paginado
+// el objetivo del paginado era ver como se implementa un hook reutilizable
 import { useEffect, useState, useRef, useMemo } from "react";
 import { Product } from "../types/product.type";
 import { ProductService } from "../services/product.service";

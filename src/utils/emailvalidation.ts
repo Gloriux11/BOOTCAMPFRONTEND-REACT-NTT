@@ -1,3 +1,4 @@
+// test
 import { RegexPatterns } from "./../types/regex.enum";
 
 /**
