@@ -1,3 +1,4 @@
+// test?
 import { useState, useMemo } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Layout from "./components/common/Layout/Layout";
@@ -23,6 +24,7 @@ function App() {
     <BrowserRouter>
       <Layout onSearch={handleSearch}>
         <Routes>
+          {/* // el requerimiento es que la p'agina de inicio y carrito sean privadas */}
           <Route path={routes.Principal} element={<ProductPage products={products} />} />
           <Route path={routes.Carrito} element={<WithAuthCartPage />} />
           <Route path={routes.Login} element={<LoginRoute />} />

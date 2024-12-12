@@ -26,6 +26,7 @@ export class AuthService {
             }
             const data = await response.json();
 
+            // esto no debe ir aqu'i
             localStorage.setItem("accessToken", data.accessToken);
             localStorage.setItem("refreshToken", data.refreshToken);
 
